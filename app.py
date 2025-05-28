@@ -5,47 +5,69 @@ from PIL import Image
 # === SETUP PAGE ===
 st.set_page_config(page_title="Education Career App", layout="wide")
 
-# === NAVIGATION BAR ===
+# === CUSTOM CSS ===
 st.markdown("""
     <style>
-        .navbar {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    body {
+        background: linear-gradient(135deg, #e0883c, #c14040, #7b2b2b);
+        color: white;
+        font-family: 'Rubik Mono One', sans-serif;
+    }
+    .main {
+        background-image: url('https://i.imgur.com/5nPrjzY.png'); /* hoặc bạn upload texture nền riêng */
+        background-size: cover;
+        background-position: center;
+        padding: 50px;
+    }
+    h1 {
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 1.2;
+    }
+    .button-custom {
+        background: linear-gradient(to right, #f9dcc4, #eaa94c);
+        padding: 10px 25px;
+        border-radius: 20px;
+        font-size: 16px;
+        color: black;
+        margin-right: 10px;
+        text-decoration: none;
+    }
+    .navbar {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
     </style>
+""", unsafe_allow_html=True)
+
+# === NAVIGATION BAR ===
+st.markdown("""
     <div class="navbar">
-        <a href="#home">Homepage</a>
-        <a href="#dataset">Dataset Overview</a>
-        <a href="#plot">Plot</a>
-        <a href="#code">Code</a>
+        <div>Homepage</div>
+        <div>Dataset Overview</div>
+        <div>Plot</div>
+        <div>Code</div>
     </div>
 """, unsafe_allow_html=True)
 
 # === HOMEPAGE SECTION ===
-st.markdown('<a name="home"></a>', unsafe_allow_html=True)
+col1, col2 = st.columns([1, 1])
+
+with col1:
+    st.markdown("<h1>EDUCATION<br>CAREER<br>SUCCESS</h1>", unsafe_allow_html=True)
+
+with col2:
+    img = Image.open("building_illustration.png")  # hoặc dùng URL ảnh
+    st.image(img, use_column_width=True)
 
 st.markdown("""
-    <div style="background: linear-gradient(to right, #8a4b36, #6f3a2b); 
-                color: white; 
-                text-align: center; 
-                padding: 50px 20px; 
-                border-radius: 12px;">
-        <h1 style="font-size: 64px;">EDUCATION<br>CAREER<br>SUCCESS</h1>
-        <br><br>
-        <a href="#dataset">
-            <button style="margin: 10px; padding: 12px 24px; font-size: 18px; border-radius: 12px;">Read the report</button>
-        </a>
-        <a href="#team">
-            <button style="margin: 10px; padding: 12px 24px; font-size: 18px; border-radius: 12px;">Learn about us</button>
-        </a>
+    <div style='text-align: center; margin-top: 20px;'>
+        <a class='button-custom' href='#'>Read the report</a>
+        <a class='button-custom' href='#'>Learn about us</a>
     </div>
 """, unsafe_allow_html=True)
 
