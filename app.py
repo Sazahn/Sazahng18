@@ -61,11 +61,8 @@ with col1:
     st.markdown("<h1>EDUCATION<br>CAREER<br>SUCCESS</h1>", unsafe_allow_html=True)
 
 with col2:
-    try:
-    img = Image.open("building_illustration.png")
+    st.image("https://i.imgur.com/wSTFkRM.png", use_column_width=True)
     st.image(img, use_column_width=True)
-except FileNotFoundError:
-    st.warning("⚠️ Ảnh minh hoạ không tìm thấy. Vui lòng kiểm tra đường dẫn hoặc dùng ảnh từ URL.")
 
 st.markdown("""
     <div style='text-align: center; margin-top: 20px;'>
@@ -116,4 +113,3 @@ def show_team(page):
             st.session_state.team_page = 2
 
 show_team(st.session_state.team_page)
-
