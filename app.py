@@ -61,7 +61,7 @@ with col1:
     st.markdown("<h1>EDUCATION<br>CAREER<br>SUCCESS</h1>", unsafe_allow_html=True)
 
 with col2:
-    st.image("https://i.imgur.com/wSTFkRM.png", use_column_width=True)
+    img = Image.open("building_illustration.png")  # hoặc dùng URL ảnh
     st.image(img, use_column_width=True)
 
 st.markdown("""
